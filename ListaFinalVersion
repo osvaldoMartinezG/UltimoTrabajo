@@ -1,0 +1,147 @@
+//MAIN CLASE
+
+
+package nodostrabajo;
+
+import java.util.Scanner;
+
+
+public class Nodostrabajo {
+
+  
+    public static void main(String[] args) {
+           
+            NodosC l;
+        l = new NodosC();
+            int opt=0;
+  do{
+     
+    Scanner sc = new Scanner(System.in);
+          Scanner bo = new Scanner(System.in);
+            Scanner se = new Scanner(System.in);
+               Scanner ho = new Scanner(System.in);
+            System.out.println("\n"
+                    +"1  - agregar datos\n"
+                     +"2  - mostar\n"
+                    +"3 - salir\n");
+                 
+             switch (opt = sc.nextInt()){
+                 case 1:
+                   System.out.println("ingrese el nombre de la bebida");
+                        String Nombre=bo.nextLine();
+                         l.agregar(Nombre);
+                   System.out.println("ingrese el nombre de la marca");
+                    String marca=se.nextLine();
+                         l.awebo(marca);
+                         System.out.println("ingrese el precio");
+                           String pr=se.nextLine();
+                           l.tacaro(pr);
+                 break;
+                 case 2:
+                    l.mostrar();
+                 break;
+               
+             }
+             
+}while(opt !=3);
+    }
+    }
+    
+//clase
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package nodostrabajo;
+
+/**
+ *
+ * @author locop
+ */
+class NodosC {
+nodo primero;
+nodo ultimo;
+nodo vaca;
+nodo burguer;
+nodo tama;
+nodo hida;
+           
+
+public void agregar( String Nombre ){
+       nodo temp= new nodo();
+       temp.Nombre= Nombre;
+       if(primero== null){
+          primero= temp;
+        primero.sig=null;
+        ultimo = primero;
+       }else{
+        ultimo.sig = temp;
+        temp.sig = null;
+        ultimo = temp;
+    }
+}
+       public void awebo( String marca ){
+       nodo temp= new nodo();
+       temp.marca= marca;
+       if(vaca== null){
+          vaca= temp;
+        vaca.bro=null;
+        burguer = vaca;
+       }else{
+        burguer.bro = temp;
+        temp.bro = null;
+        burguer = temp;
+    }
+    }
+           public void tacaro( String Id ){
+       nodo temp= new nodo();
+       temp.Id= Id;
+       if(tama== null){
+          tama= temp;
+        tama.vaa=null;
+        hida = tama;
+       }else{
+        hida.vaa = temp;
+        temp.vaa = null;
+        hida = temp;
+    }
+    }
+public void mostrar(){
+    nodo ac = new nodo();
+    ac= primero;
+    nodo we = new nodo();
+    we= vaca;
+       nodo pp = new nodo();
+    pp= tama;
+    int cont=0;
+    while(ac != null){
+        cont++;
+        System.out.println(" "+"["+cont+"]"+" "+"["+ac.Nombre+"]"+" "+" "+"["+we.marca+"]"+" "+" "+"["+pp.Id+"]"+" ");
+        ac = (nodo) ac.sig;
+         we = (nodo) we.bro;
+         pp= (nodo) pp.vaa;
+    }
+}
+}
+// CLASS NODO
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package nodostrabajo;
+
+/**
+ *
+ * @author locop
+ */
+class nodo {
+       String marca;
+      String Nombre;
+      String Id;
+      float precio;
+    nodo sig;
+    nodo bro;
+    nodo vaa;
+    
+}
+
