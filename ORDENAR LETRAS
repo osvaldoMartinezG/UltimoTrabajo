@@ -1,0 +1,208 @@
+//MAIN CLASS
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package listaletras;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author locop
+ */
+public class ListaLetras {
+
+    
+    public static void main(String[] args) {
+   
+           
+            NodoW  l;
+        l = new NodoW();
+            int opt=0;
+  do{
+     
+    Scanner sc = new Scanner(System.in);
+          
+            System.out.println("\n"
+                    +"1  - agregar palabra\n"
+                    +"2  - mostrar\n"
+                    +"3  - ordenar\n"
+                    +"4  - salir\n");
+                  
+                 
+             switch (opt = sc.nextInt()){
+                 case 1:
+                         l.agregar();
+                 break;
+                 case 2:
+                         l.mostrar();
+                 break;
+                 case 3:
+                    for(int i=0; i<=100; i++){
+                     l.ordenar();
+                     }
+                     break;
+             }
+             }while(opt !=4);
+                 
+             
+  
+  }
+}
+//CLASS NODOSW OBJ
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package listaletras;
+
+import java.util.Random;
+
+/**
+ *
+ * @author locop
+ */
+class NodoW {
+    nodo inicio;
+    nodo fin;
+    public void agregar(){
+        int can = 5;
+        
+        String [] z = new String [can];
+        Random random = new Random();
+        if (inicio == null) {
+            inicio = new nodo();
+           // char[] ca = {(char) (random.nextInt(26) + 'a')};
+           // char[] ce = {(char) (random.nextInt(26) + 'a')};
+          //  char[] ci = {(char) (random.nextInt(26) + 'a')};
+          //  char[] co = {(char) (random.nextInt(26) + 'a')};
+            char[] ca = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+            char[] ce = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+            char[] ci = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+            char[] co = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+
+
+            for (int i = 0; i < can; i++) {
+
+                z[i] = co[(int) ((Math.random() * ((ca.length - 1) - 0 + 1) + 0))]+ " "
+                        + ce[(int) ((Math.random() * ((ca.length - 1) - 0 + 1) + 0))] + " "
+                        + ce[(int) ((Math.random() * ((ca.length - 1) - 0 + 1) + 0))] + " "
+                        + ci[(int) ((Math.random() * ((ca.length - 1) - 0 + 1) + 0))] + " ";
+                inicio.dato = z[i];
+                //inicio.sig = null;
+                //fin = inicio;
+            }
+
+            inicio.sig = null;
+            fin = inicio;
+        } else {
+            nodo tem;
+           
+            tem = new nodo();
+           // char[] ca = {(char) (random.nextInt(26) + 'a')};
+           // char[] ce = {(char) (random.nextInt(26) + 'a')};
+           // char[] ci = {(char) (random.nextInt(26) + 'a')};
+           // char[] co = {(char) (random.nextInt(26) + 'a')};
+             char[] ca = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+            char[] ce = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+            char[] ci = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+            char[] co = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+
+
+            for (int q = 0; q < can; q++) {
+
+                z[q] = ce[(int) (Math.floor(Math.random() * ((ca.length - 1) - 0 + 1) + 0))] + " "
+                        + ce[(int) (Math.floor(Math.random() * ((ca.length - 1) - 0 + 1) + 0))] + " "
+                        + ci[(int) (Math.floor(Math.random() * ((ca.length - 1) - 0 + 1) + 0))] + " "
+                        + co[(int) (Math.floor(Math.random() * ((ca.length - 1) - 0 + 1) + 0))] + " ";
+                tem.dato = z[q];
+                //fin.sig = tem;
+                //tem.sig = null;
+                //fin = temp;
+                
+            }
+            
+            fin.sig = tem;
+            tem.sig = null;
+            fin = tem;
+        }
+   
+
+    }
+    public void mostrar(){
+       nodo actual= new nodo();
+      actual= inicio;
+
+       
+        while (actual != null) {
+            System.out.println(actual.dato + " ");
+            
+            actual = (nodo)actual.sig;
+           
+        }
+    }
+    public void ordenar(){
+            String aux;
+            
+        nodo actual = inicio;
+        nodo siguiente = actual.sig;
+            //    for (int j = 1; j <= 5; j++) {
+            if(inicio!=null){
+                
+                while (actual.sig != null) {
+                      //int resultado= actual.webos.compareTo(siguiente.webos);
+                        //resultado==0actual.dato!=siguiente.dato
+                    if (actual.dato.compareTo(siguiente.dato)>0){
+                    
+                        aux = actual.dato;
+                        actual.dato = siguiente.dato;
+                        siguiente.dato = aux;
+                    }
+                    actual = siguiente;
+                    siguiente = actual.sig;
+                }
+
+            }
+        
+
+    }
+    public void ordenar2 (){
+        String aux;
+        nodo actual = inicio;
+        nodo siguiente = actual.sig;
+        if(inicio!=null){
+        for(int i=0; i<3;i++){
+            for(int j =0; j<3 && i!=j; j++){
+                if(actual.dato.compareTo(siguiente.dato)<0){
+                     aux=actual.dato;
+                     actual.dato=siguiente.dato;
+                     siguiente.dato=aux;
+                }
+                 actual = siguiente;
+                    siguiente = actual.sig;
+            }
+        }
+    }
+    }
+}
+//CLASS NODO
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package listaletras;
+
+/**
+ *
+ * @author locop
+ */
+class nodo {
+    String dato;      
+    
+    
+    nodo sig;
+}
+
+    
+    
